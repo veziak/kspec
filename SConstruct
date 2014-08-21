@@ -2,7 +2,7 @@ import os
 
 PLATFORM = os.uname()[0].lower()
 
-libs = ['lua', 
+libs = ['lua5.1', 
         'boost_system-mt', 
         'boost_filesystem-mt',
         'boost_program_options-mt'] 
@@ -51,4 +51,4 @@ env.Program(target = 'kspec',
 
 env.Command(target = ['Parser.cpp', 'Parser.h', 'Scanner.cpp', 'Scanner.h'],
             source = 'kspec.atg',
-            action = "coco $SOURCE")
+            action = "cococpp $SOURCE")

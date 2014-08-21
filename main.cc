@@ -180,7 +180,7 @@ generate_code(po::variables_map &options, hh::Keyboard::Ptr &kb)
   {
     try
     {
-      if (fs::is_regular_file(dir_itr->status()) && boost::iends_with(dir_itr->path().stem(), ".elu"))
+      if (fs::is_regular_file(dir_itr->status()) && boost::iends_with(dir_itr->path().stem().string(), ".elu"))
       {
         generate(dir_itr->path(), output_dir, L, options);
       }
@@ -250,9 +250,9 @@ generate(const fs::path &template_filename, const fs::path &output_dir, lua_Stat
          const po::variables_map &options)
 {
   // build the template filename from the output filename, and open it
-  string stem = template_filename.stem();
+  string stem = template_filename.stem().string();
   boost::replace_all(stem, ".elu", "");
-  fs::path output_filename(stem + template_filename.extension());
+  fs::path output_filename(stem + template_filename.extension().string());
   output_filename = output_dir / output_filename;
 
   cout << "generating " << output_filename << " from " << template_filename << endl;
