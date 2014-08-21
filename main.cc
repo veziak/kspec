@@ -268,7 +268,7 @@ generate(const fs::path &template_filename, const fs::path &output_dir, lua_Stat
   } state = ROOT;
 
   stringstream out;
-  out << " outfile = io.open('" << output_filename << "', 'w'); " << endl;
+  out << " outfile = assert(io.open(" << output_filename << ", 'w')); " << endl;
   size_t prev_pos, found_pos;
   string line;
   bool out_newline;
