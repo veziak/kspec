@@ -2,10 +2,10 @@ import os
 
 PLATFORM = os.uname()[0].lower()
 
-libs = ['lua5.1', 
-        'boost_system-mt', 
-        'boost_filesystem-mt',
-        'boost_program_options-mt'] 
+libs = ['lua5.2', 
+        'boost_system', 
+        'boost_filesystem',
+        'boost_program_options'] 
 
 env = Environment()
 
