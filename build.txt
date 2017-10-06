@@ -1,4 +1,0 @@
-aptitude install libboost-system1.55-dev libboost-filesystem1.55-dev libboost-program-options1.55-dev liblua5.2-dev coco-cpp scons
-cp /usr/share/coco-cpp/Parser.frame .
-cp /usr/share/coco-cpp/Scanner.frame .
-scons

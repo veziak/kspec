@@ -5,13 +5,9 @@ RUN apt-get install -y libboost-all-dev
 RUN apt-get install -y scons
 RUN apt-get install -y coco-cpp
 RUN apt-get install -y liblua5.2-dev
+RUN mkdir /tmp/kspec
 
-COPY * /tmp/kspec/
 RUN cp /usr/share/coco-cpp/Parser.frame /tmp/kspec
 RUN cp /usr/share/coco-cpp/Scanner.frame /tmp/kspec
-
-WORKDIR "/tmp/kspec/"
-RUN scons
-RUN ls
 
 
